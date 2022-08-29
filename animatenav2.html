@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="animanav2.css">
+    <link rel="stylesheet" type="text/css" href="animaside2.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  > -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+    </script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
+    
+    <script>
+        var state = "expanded";
+        //Check if navbar is expanded or minimized and handle 
+        $(document).ready(function () {
+            // alert("WELCOME");
+            $('#navbar-toggle').click(function () {
+                if (state == "expanded") {
+                    $('.sidebar').css('margin-left', '-180px');
+                    state = "minimized";
+                } else {
+                    if (state == "minimized") {
+                        $('.sidebar').css('margin-left', '0px');
+                        state = "expanded";
+                    }
+                }
+            })
+        })
+    </script>
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sidebar-nav</title>
+</head>
+
+<body>
+    <!-- <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-12" style="padding: 0;"> -->
+
+    <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <a class="navbar-brand" href="#">
+            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png"
+                width="30" height="30" alt="logo">
+            &nbsp;&nbsp;NOTASCO
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="right">
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+        </div> 
+        <div class="collapse navbar-collapse" id="navbar-list-4">
+             
+            <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                            width="40" height="40" class="rounded-circle">
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="#">Edit Profile</a>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <a class="navbar-brand" href="#">
+          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png" width="30" height="30" alt="logo">
+          BootstrapBay
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-list-4">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" 
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" 
+                width="40" height="40" class="rounded-circle">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Dashboard</a>
+                <a class="dropdown-item" href="#">Edit Profile</a>
+                <a class="dropdown-item" href="#">Log Out</a>
+              </div>
+            </li>   
+          </ul>
+        </div> 
+        
+          
+      </nav>
+
+
+    <!-- <div class="container-fluid"> -->
+    <!-- <div class="row"> -->
+    <!-- <div class="column-2 h-100"> -->
+    <!-- <div class="container-fluid h-100"> -->
+    <!-- <div class="row h-100"> -->
+    <!-- <div class="col-2"> -->
+        <div class="sidebar">
+
+            <ul class="sidebar-nav">
+                <li>
+                    <a id="navbar-toggle">Close <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#">Home <i class="fa fa-home menu-icon fa-2x" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#">Download<i class="fa fa-download menu-icon fa-2x" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#">Edit<i class="fa fa-cog menu-icon fa-2x" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#">log out<i class="fa fa-sign-out menu-icon fa-2x" aria-hidden="true"></i>
+                        </a>
+                </li>
+    
+            </ul>
+        </div>
+   <div id="dashboard">
+    <h1>Dashboard</h1>
+    <hr>
+    <center>
+        <h3>WELCOME TO DASHBOARD</h3>
+    </center>
+    <hr>
+    
+    <table class="table table-striped">
+        <!-- <thead> -->
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Handle</th>
+        </tr>
+        <!-- </thead>
+        <tbody> -->
+        <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        <!-- </tbody> -->
+    </table>
+
+  
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabs-1" role="tab">First Panel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tabs-2" role="tab">Second Panel</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Third Panel</a>
+        </li>
+    </ul><!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane " id="tabs-1" role="tabpanel">
+            <p>First Panel</p>
+        </div>
+        <div class="tab-pane active" id="tabs-2" role="tabpanel">
+            <p>Second Panel</p>
+        </div>
+        <div class="tab-pane" id="tabs-3" role="tabpanel">
+            <p>Third Panel</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
