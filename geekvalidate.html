@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <script>
+            function gfg() {
+                 var name =
+                     document.RegForm.Name.value;
+                  var email =
+                      document.forms.RegForm.EMail.value;
+                  var phone =
+                      document.forms.RegForm.Telephone.value;
+                 var what =
+                     document.forms.RegForm.Subject.value;
+                  var password =
+                    document.forms.RegForm.Password.value; 
+                var address =
+                      document.forms.RegForm.Address.value;
+                 var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+                 var regPhone=/^\d{10}$/;                                      
+                var regName = /\d+$/g;                                    
+                
+                if (name == "" || regName.test(name)) {
+                    alert("Please enter your name properly.");
+                    //name.focus();
+                   // return true;
+                }
+                else {
+                    
+                    alert("Username is correct");
+            }
+
+                if (email == "" || !regEmail.test(email)) {
+                    alert("Please enter a valid e-mail address.");
+                    //email.autofocus();
+                    //return true;
+                }
+                else {
+                    
+                    alert("email is correct");
+               
+                }
+                
+                if (phone == "" || !regPhone.test(phone)) {
+                    alert("Please enter valid phone number.");
+                    //phone.autofocus();
+                    //return true;
+                }
+                else {
+                    alert("number is correct");
+                }
+                
+
+                if (password == "") {
+                    alert("Please enter your password");
+                    //password.autofocus();
+                    //return true;
+                }
+                
+ 
+                else if(password.length <6){
+                    alert("Password should be atleast 6 character long");
+                    //password.autofocus();
+                    //return true; 
+                }
+                else {
+                    alert("password format is correct")
+                }
+               
+ 
+                if (address == "") {
+                    alert("Please enter your address.");
+                    //address.autofocus();
+                    //return true;
+                }  
+                        
+                
+            //    if (what.selectedIndex == -1) {
+            //         alert("Please enter your course.");
+            //         what.focus();
+            //         return true;
+            //                 
+                return true;
+            }
+           
+        </script>
+         </head>
+         <body style="background-color: lightgreen;">
+            <h1 style="text-align: center;">REGISTRATION FORM</h1>
+            <form name="RegForm" onsubmit="gfg();event.preventDefault(); validateRegForm();" method="post"> 
+                <center>
+                Name: <input type="text"
+                            size="65" name="Name" onfocus="event.preventDefault();validateName();"><br><br>        
+                E-mail Address: <input type="text"
+                            size="65" name="EMail" onfocus="event.preventDefault();validateEmail();"><br><br>
+                Telephone: <input type="text"
+                        size="65" name="Telephone" onfocus="event.preventDefault();validateTelephone();"><br><br>
+                Password: <input type="text"
+                        size="65" name="Password" onfocus="event.preventDefault();validatePassword();"><br><br>
+                Address: <input type="text"
+                        size="65" name="Address" onfocus="event.preventDefault();validateAddress();"><br> <br>  
+                SELECT YOUR COURSE
+                <select type="text" value="" name="Subject">
+                    <option>BTECH</option>
+                    <option>BBA</option>
+                    <option>BCA</option>
+                    <option>B.COM</option>
+                    <option>GEEKFORGEEKS</option>
+                </select><br><br>
+                Comments: <textarea cols="55"
+                            name="Comment"> </textarea><br><br>
+                 <input type="submit"
+                    value="submit" name="Submit">
+                <input type="reset"
+                    value="Reset" name="Reset">  
+                </center>
+                </form>
+            </body>
+        </html>

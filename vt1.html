@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        web page design
+    </title>
+    <head>
+        <style>
+            #outer {
+                background-color:red;
+                display:inline-block;
+                padding:100px;
+            }
+            #inner {
+                background-color:yellow;
+                display:inline-block;
+                padding:100px;
+            }
+        </style>
+         <meta content="text/html;charset=utf-8" http-equiv="content-type">
+        
+    </head>
+    <body>
+        <div id="outer">
+        Outer Div
+        <div id="inner">
+            Inner Div
+    </div>
+    </div>
+    <script>
+        document.getElementById("outer").addEventListener("click",function() {
+           // console.log("Outer div isclicked");
+            alert("Outer div is clicked");
+        },false);
+        document.getElementById("inner").addEventListener("click",function() {
+           // console.log("Inner div isclicked");
+            alert("Inner div is clicked");
+        },false);
+</script>
+    </body>
+</html>

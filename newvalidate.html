@@ -1,0 +1,126 @@
+<html>
+ <head>
+   <center><h1>MAIL ID REGISTRATION</h1></center>
+    <title>Mailid form</title>
+    <script>
+        function validateUser(input1)
+        {
+            var regName = /\d+$/g;
+            if( document.myForm.username.value == "" ) {
+            // alert( "Please provide your name!" );
+            alert("Please provide your name!");
+            document.myForm.username.focus();
+            return false;
+         } else if(input1.value.match(regName)) {
+            alert("please enter your name properly");
+            document.myForm.username.focus();
+            return false;
+         }else {
+            alert("valid username address is given!");
+            return true;
+         }
+        }
+         function validateEmail(input2)
+         {
+            var validRegex=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(document.myForm.emailid.value == "") {
+            alert( "Please provide your Email!" );
+            document.myForm.emailid.focus() ;
+             return false;
+         } else if(input2.value.match(validRegex)) {
+            alert( "valid email address!" );
+           // document.myForm.emailid.focus();
+            return true;
+          } else {
+            alert("Invalid email address!");
+            document.myForm.emailid.focus();
+            return false;
+         }
+        }
+        function validatePass()
+        {
+            if( document.myForm.password.value == "" ) {
+            alert( "Please provide your Password!" );
+            document.myForm.password.focus();
+            return false;
+         }
+        }
+        function validatePhone(input3)
+        {
+            var regPhone=/^\d{10}$/;
+            if( document.myForm.number.value == "" ) {
+            alert( "Please provide your Phone number!" );
+            document.myForm.number.focus() ;
+            return false;
+         }else if(input3.value.match(regPhone)) {
+            alert("Please enter a valid phone number.");
+            document.myForm.number.focus();
+            return false;
+         }else {
+            alert( "valid phone number!");
+            return true;
+         }
+         return true;
+        }
+        function validateSel()
+        {
+            if (what.selectedIndex == -1) {
+                    alert("Please enter your course.");
+                    what.focus();
+                    return false;
+                }
+                return true;
+                    }
+                    </script>
+                </head>
+    <body style="background-color: lightyellow;">
+        <form name="myForm" method="post">
+            Username:<br>
+          <input type="text" name="username" size="30">
+          <br><br>
+          Emailid:<br>
+          <input type="text" name="emailid" size="30" onblur="validateUser(input1)">
+          <br><br>
+          Password:<br>
+          <input type="password" name="password" size="30" onblur="validateEmail(input2)">
+          <br><br>
+          Phonenumber:<br>
+          <input type="number" name="number" onblur="validate2(input3)">
+          <br><br>
+          SELECT GENDER
+          <input type="radio" name="gender" id="male">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female">
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="others">
+          <label for="others">Others</label>
+          <br><br>
+          SELECTSUBJECTS
+          <br><br>
+          <input type="checkbox" name="courses" id="c">
+          <label for="c">C</label>
+          <input type="checkbox" name="courses" id="c++">
+          <label for="c++">C++</label>
+          <input type="checkbox" name="courses" id="java">
+          <label for="java">Java</label>
+          <input type="checkbox" name="courses" id="angularjs">
+          <label for="angularjs">Angular js</label>
+          <br><br>
+          Address:<br>
+          <textarea rows="5" cols="50" name="Description"></textarea>
+          <br><br>
+          Country:<br><br>
+          <label for="country">Country:</label>
+                <select name="country" id="country">
+                    <option value="India">India</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Australia">England</option>
+                    <option value="Australia">Newzealand</option>
+                </select>
+         <br><br>
+         <input type="submit" name="Submit" value="submit" onblur="validatePhone(input3)">&nbsp;&nbsp;
+           <input type="reset" value="Reset" name="Reset">
+         </form>
+         </body>
+         </html>

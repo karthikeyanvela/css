@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        web page design
+    </title>
+    <head>
+        <script>
+                document.querySelector("#outer").addEventListener('click',e=>{
+                    console.log("Outer div isclicked");
+                },false);
+                document.querySelector("#inner").addEventListener('click',e=>{
+                    console.log("Inner div isclicked");
+                },false);
+        </script>
+    </head>
+    <body>
+        <div id="outer" style="background-color:red;display:inline-block;padding:50px;">
+        Outer Div
+        <div id="inner" style="background-color:yellow;display:inline-block;padding:50px;">
+            Inner Div
+    </div>
+    </div>
+    </body>
+</html>

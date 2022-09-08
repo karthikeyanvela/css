@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="animanav2.css">
-    <link rel="stylesheet" type="text/css" href="animasidenav2.css">
+    <!-- <link rel="stylesheet" type="text/css" href="animanav2.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="animasidenav2.css"> -->
+    <link rel="stylesheet" type="text/css" href="stranavbar3.css">
+    <link rel="stylesheet" type="text/css" href="sidenavbar3.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet"> 
@@ -28,7 +30,8 @@ href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-asse
 
     </script>-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
    
     
     <script>
@@ -48,34 +51,146 @@ href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-asse
                 }
             })
         })
-    </script>
-
-    <script>
-        // const player = {"firstName":"Sachin", "lastName":"Tendulkar", "age":43, "country":"India","role":"Batsman"};
-        // const obj = {};
-        let player=["firstName","lastName", "age","country","role"];
-        let details=["Sachin","Tendulkar",43,"India","Batsman"];
-        let obj={};
-        let txt="";
-        function somAct()
-        {
-         for(let i=0;i<player.length;i++)
-         
-         {
-            txt+=obj[player[i]]=details[i]+"<br>";
-             document.getElementById("demo").innerHTML= txt;
+</script>
+<script>   
+    function somAct()
+    {        
+    const countries = ["India","Australia","England","Newzealand","America"];
+    const btn=document.getElementById("ttt");
+    let txt = "";
+     let x = document.getElementById("demo");
+    //  let y=  document.getElementById("demo");
+    //   let z=  document.getElementById("demo");
+    var div = document.createElement("div");
+    div.id = "rrr";     
+    div.style.display="block";
+    for(let i=0;i<countries.length;i++)
+    {
+        txt +=countries[i] + "<br>";
+        // x.innerHTML=txt;
+    }   
+    // div.append(txt);
+    div.innerHTML=txt;
+     btn.onclick=function() {
+         if(div.style.display==="block") {
+             div.style.display="none";
+         }else {
+             div.style.display="block";
+         };
     }
+    function mouseOver() {
+        div.style.color="red";
+    }
+    function mouseOut() {
+        div.style.color="black";
+    }
+    div.onmouseover = function() {mouseOver()};
+    div.onmouseout = function() {mouseOut()};
+    x.appendChild(div);
+}  
+</script>
+<script>
+function validation() {
+    var fname = document.getElementById("firstName");
+       //  document.RegForm.Name.value;
+     var lname =
+         document.getElementById("lastName");
+     var email =
+         document.getElementById("eMail");
+   var passwo=document.getElementById("passWord");
+   var conpasswo=document.getElementById("confirmPassword");
+   var phone=document.getElementById("phoneNumber");
+    var address =
+        document.getElementById("inputAddress");
+    var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+    var regPhone=/^\d{10}$/;                                      
+   var regName = /\d+$/g;                                    
+  var fName = document.getElementById("error");
+  var lName = document.getElementById("error1");
+  var eMail = document.getElementById("error2");
+  var pWord=document.getElementById("error3");
+  var cPasswo=document.getElementById("error4");
+  var pNumber=document.getElementById("error5");
+  var iAddress=document.getElementById("error6");
+   if (fname.value == "" || regName.test(fname.value)) {
+       fName.innerHTML ="Please enter your first name properly.";
+       //name.autofocus();
+   }
+   else {
+           fName.innerHTML ="";
+   }
+
+   if (lname.value == "" || regName.test(lname.value)) {
+       lName.innerHTML ="Please enter your last name properly.";
+       //name.autofocus();
+   }
+   else {
+           lName.innerHTML ="";
+   }
+
+   if (email.value == "" || !regEmail.test(email.value)) {
+    eMail.innerHTML="please enter emailid with proper format.";
+   }
+   else {
+    eMail.innerHTML="";
+   }
+   if (passwo.value.length=="") {
+    pWord.innerHTML ="please enter your password with correct format.";
 }
-function mouseOver() {
-document.getElementById("demo").style.color="red";
+else if(passwo.value.length <6) {
+    pWord.innerHTML ="please enter password with atleast 6 character";
+}
+else {
+        pWord.innerHTML="";
 }
 
-function mouseOut() {
-document.getElementById("demo").style.color ="black";
+//  if (conpasswo.value.length =="") {
+//     cPasswo.innerHTML ="please enter your confirm password with correct format.";
+// }
+// else if(conpasswo.value.length <6) {
+//     cPasswo.innerHTML="please enter your confirm password with atleast 6 character.";
+// }
+// else if(passwo.value.length != conpasswo.value.length) {
+//     cPasswo.innerHTML="password and confirm password must be equal.";
+// }
+// else {
+//     cPasswo.innerHTML="";
+//}
+if (phone.value == "" || !regPhone.test(phone.value)) {
+   pNumber.innerHTML="please enter proper number format.";
 }
-    </script>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Adam gilchrist</title>
+else {
+    pNumber.innerHTML="";
+}
+if (address.value == "") {
+    iAddress.innerHTML="please fill your address in the address field.";
+}
+else {
+    iAddress.innerHTML="";
+}
+// if (password == "") {
+//     alert("Please enter your password");
+//     //password.autofocus();
+//     return true;
+// }
+// if(password.length <6){
+//     alert("Password should be atleast 6 character long");
+//     //password.autofocus();
+//     return true; 
+// }
+// if(address == "") {
+//     alert("Please enter your address.");
+//     //address.autofocus();
+//     return true;
+// } 
+// alert("ALL DATAS ARE SUCCESSFULLY VERIFIED");           
+return true;
+            
+        }
+        </script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come 
+        *after* these tags -->
+    <title>Sidebar-nav</title>
 </head>
 
 <body>
@@ -128,7 +243,7 @@ document.getElementById("demo").style.color ="black";
         <a class="navbar-brand" href="#">
           <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png" 
           width="30" height="30" alt="logo">
-          NOTASCO tech
+          NOTASCO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" 
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -247,9 +362,144 @@ document.getElementById("demo").style.color ="black";
     <div id="dashboard">
     <h1>Dashboard</h1>
     <hr> 
-    <button onclick="somAct();this.onclick=null;"  class="btn btn-primary">Click</button>
-    <div id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"></div>
-   
+    <!-- <button onclick="somAct()" class="btn btn-primary" id="ttt">Click</button>
+    <div id="demo"></div> <br><br> -->
+    <div id="bottom">
+    <form name="MyForm">
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-4">
+            <input type="text" class="form-control" placeholder="First name" id="firstName"><br>
+            <span id="error"></span>
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" placeholder="Last name" id="lastName"><br>
+            <span id="error1"></span>
+          </div>
+          <div class="col-2"></div>
+        </div><br>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <input type="email" class="form-control" placeholder="E-mailid" id="eMail"><br>
+                <span id="error2"></span>
+              </div>
+              <div class="col-4">
+                <input type="password" class="form-control" placeholder="Password" id="passWord"><br>
+                <span id="error3"></span>
+              </div>
+              <div class="col-2"></div>
+              </div><br>
+              <div class="row">
+                <div class="col-1"></div>
+                <div class="col-4">
+                <input type="password" class="form-control" 
+                placeholder="Confirm password" id="conPassword"><br>
+                <span id="error4"></span>
+                  </div>
+                  <div class="col-4">
+                    <input type="number" class="form-control" placeholder="Phone number" id="phoneNumber"><br>
+                    <span id="error5"></span>
+                  </div>
+                  <div class="col-2"></div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"><br>
+                        <span id="error6"></span>
+                    </div>
+                    <div class="col-2"></div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" 
+                        value="option1">
+          <label class="form-check-label" for="gridRadios1">
+            Male
+          </label></div>
+          <div class="col-2">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" 
+          value="option2">
+          <label class="form-check-label" for="gridRadios1">
+            Female
+          </label></div>
+          <div class="col-2">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" 
+          value="option3">
+          <label class="form-check-label" for="gridRadios3">
+            Others
+          </label></div><br>
+                    <div class="col-2"></div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          M.E
+        </label>
+                    </div>
+                    <div class="col-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck2">
+        <label class="form-check-label" for="gridCheck2">
+          M B A
+        </label></div>
+        <div class="col-2">
+            <input class="form-check-input" type="checkbox" id="gridCheck3">
+        <label class="form-check-label" for="gridCheck3">
+          Ph.D
+        </label>
+        </div>
+                  </div><br>
+                  <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <input type="button" onclick="validation()"
+                        value="submit" name="Submit">
+                    </div>
+                    <div class="col-3">
+                        <input type="reset"
+                    value="Reset" name="Reset"> 
+                    </div>
+                    <div class="col-3"></div>
+                  </div>
+                  </div><br>
+                  <!-- <button onclick="somAct()" class="btn btn-primary" id="ttt">
+                    Click</button> -->
+                    <button onclick="somAct()" id="ttt"   
+                     data-bs-toggle="collapse" 
+                     data-bs-toggle="dropdown">
+                    Click</button>
+    <div id="demo"></div>         
+      </form>
+      </div>
+      </div>
+    </body>
+    </html>
+    <!-- <div id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"></div>  -->
+    <!-- <script>
+        const countries = ["India","Australia","England","Newzealand","America"];
+        let txt = "";
+        function somAct()
+        {
+        for(let i=0;i<countries.length;i++)
+        {
+            txt +=countries[i] + "<br>";
+            document.getElementById("demo").innerHTML=txt;
+        }
+    }
+    function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "00ff00";
+}
+    </script> -->
+    
     <!-- <table class="table table-striped">
          <thead> 
         <tr>
@@ -304,8 +554,5 @@ document.getElementById("demo").style.color ="black";
         <div class="tab-pane" id="tabs-3" role="tabpanel">
             <p>Third Panel</p>
         </div> -->
-    </div>
+    
 
-</body>
-
-</html>

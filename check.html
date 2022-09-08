@@ -48,34 +48,72 @@ href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-asse
                 }
             })
         })
-    </script>
-
-    <script>
-        // const player = {"firstName":"Sachin", "lastName":"Tendulkar", "age":43, "country":"India","role":"Batsman"};
-        // const obj = {};
-        let player=["firstName","lastName", "age","country","role"];
-        let details=["Sachin","Tendulkar",43,"India","Batsman"];
-        let obj={};
-        let txt="";
-        function somAct()
-        {
-         for(let i=0;i<player.length;i++)
-         
-         {
-            txt+=obj[player[i]]=details[i]+"<br>";
-             document.getElementById("demo").innerHTML= txt;
+</script>
+<script>   
+    function somAct()
+    {        
+    const countries = ["India","Australia","England","Newzealand","America"];
+    let txt = "";
+     let x = document.getElementById("demo");
+    //  let y=  document.getElementById("demo");
+    //   let z=  document.getElementById("demo");
+    var div = document.createElement("div");
+    div.id = "rrr";
+//      if (x.style.display === "none") {
+//        x.style.display = "block";
+//      } else {
+//       x.style.display = "none";
+//    }
+    div.style.display="block";
+    for(let i=0;i<countries.length;i++)
+    {
+        txt +=countries[i] + "<br>";
+        // x.innerHTML=txt;
+    }   
+    // div.append(txt);
+    div.innerHTML=txt;
+    function mouseOver() {
+        div.style.color="red";
     }
+    function mouseOut() {
+        div.style.color="black";
+    }
+    div.onmouseover = function() {mouseOver()};
+    div.onmouseout = function() {mouseOut()};
+    x.appendChild(div);
 }
-function mouseOver() {
-document.getElementById("demo").style.color="red";
-}
+    // if(div.style.display==="none") {
+    //     div.style.display="block";
+    // } else {
+    //     div.style.display="none";
+    // }
+    
+   // x.style.display="block";
+//       if (x.style.display === "none") {
+//       x.style.display = "block";
+//     } else {
+//      x.style.display = "none";
+//    }
+    // if(x==="none") {
+    //     x="block";
+    // }else {
+    //     x="none";
+    // }
 
-function mouseOut() {
-document.getElementById("demo").style.color ="black";
-}
-    </script>
+// }
+// function mouseOver() {
+//     let divId = document.getElementById("demo");
+// divId.style.color = "red";
+// }
+
+// function mouseOut() {
+//     let divId = document.getElementById("demo");
+// divId.style.color = "black";
+// }
+</script>
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Adam gilchrist</title>
+    <title>Sidebar-nav</title>
 </head>
 
 <body>
@@ -128,7 +166,7 @@ document.getElementById("demo").style.color ="black";
         <a class="navbar-brand" href="#">
           <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png" 
           width="30" height="30" alt="logo">
-          NOTASCO tech
+          NOTASCO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" 
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -247,9 +285,29 @@ document.getElementById("demo").style.color ="black";
     <div id="dashboard">
     <h1>Dashboard</h1>
     <hr> 
-    <button onclick="somAct();this.onclick=null;"  class="btn btn-primary">Click</button>
-    <div id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"></div>
-   
+    <button onclick="somAct()" class="btn btn-primary">Click</button>
+    <div id="demo"></div> 
+    <!-- <div id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()"></div>  -->
+    <!-- <script>
+        const countries = ["India","Australia","England","Newzealand","America"];
+        let txt = "";
+        function somAct()
+        {
+        for(let i=0;i<countries.length;i++)
+        {
+            txt +=countries[i] + "<br>";
+            document.getElementById("demo").innerHTML=txt;
+        }
+    }
+    function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "00ff00";
+}
+    </script> -->
+    
     <!-- <table class="table table-striped">
          <thead> 
         <tr>

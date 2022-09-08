@@ -1,0 +1,102 @@
+<html>
+ <head>
+   <center><h1>MAIL ID REGISTRATION</h1></center>
+    <title>Mailid form</title>
+    <script>
+        function validate()
+        {
+            if( document.myForm.username.value == "" ) {
+            // alert( "Please provide your name!" );
+            alert("Please provide your name!");
+            document.myForm.username.focus() ;
+            return false;
+         }
+        onsubmit=function(input) {
+          var validRegex=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if(input.value.match(validRegex)) {
+            alert( "valid email address!" );
+            document.myForm.emailid.focus();
+            return true;
+          } else {
+            alert("Invalid email address!");
+            document.myForm.emailid.focus();
+            return false;
+         }
+        }
+         if(document.myForm.emailid.value == "") {
+            alert( "Please provide your Email!" );
+            document.myForm.emailid.focus() ;
+             return false;
+         }
+         if( document.myForm.password.value == "" ) {
+            alert( "Please provide your Password!" );
+            document.myForm.password.focus() ;
+            return false;
+         }
+         if( document.myForm.number.value == "" ) {
+            alert( "Please provide your Phone number!" );
+            document.myForm.number.focus() ;
+            return false;
+         }
+         if( document.myForm.country.value == "-1" ) {
+            alert( "Please provide your country!" );
+            return false;
+         }
+        return (true);
+        
+      }
+    </script>
+    </head>
+    <body style="background-color: lightyellow;">
+        <!-- <form name="myForm" onsubmit="return(validate(),validateEmail());" method="post"> -->
+          <form name="myForm" onsubmit="validate()" method="post">
+          Username:<br>
+          <input type="text" name="username" size="30"><span id="error"></span>
+          <br><br>
+          Emailid:<br>
+          <input type="text" name="emailid" size="30"><span id="error"></span>
+          <br><br>
+          Password:<br>
+          <input type="password" name="password" size="30"><span id="error"></span>
+          <br><br>
+          Phonenumber:<br>
+          <input type="number" name="number"><span id="error"></span>
+          <br><br>
+          SELECT GENDER
+          <input type="radio" name="gender" id="male">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female">
+          <label for="female">Female</label>
+          <input type="radio" name="gender" id="others">
+          <label for="others">Others</label>
+          <br><br>
+          SELECTSUBJECTS
+          <br><br>
+          <input type="checkbox" name="courses" id="c">
+          <label for="c">C</label>
+          <input type="checkbox" name="courses" id="c++">
+          <label for="c++">C++</label>
+          <input type="checkbox" name="courses" id="java">
+          <label for="java">Java</label>
+          <input type="checkbox" name="courses" id="angularjs">
+          <label for="angularjs">Angular js</label>
+          <br><br>
+          Address:<br>
+          <textarea rows="5" cols="50" name="Description"></textarea><span id="error"></span>
+          <br><br>
+          Country:<br><br>
+          <label for="country">Country:</label>
+                <select name="country" id="country">
+                    <option value="India">India</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Australia">England</option>
+                    <option value="Australia">Newzealand</option>
+                </select>
+         <br><br>
+          <input type="submit" name="Submit" value="submit">&nbsp;&nbsp;
+           <input type="reset" value="Reset" name="Reset">
+        </form>
+        </body>
+        </html>
+     
